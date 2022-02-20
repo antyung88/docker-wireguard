@@ -38,7 +38,7 @@ jobs:
       - run: curl -L -O https://downloads.dockerslim.com/releases/1.37.3/dist_linux.tar.gz
       - run: tar -zxvf dist_linux.tar.gz
       - run: script -q -c "./dist_linux/docker-slim --debug version"
-      - run: script -q -c "./dist_linux/docker-slim build --target wireguard --http-probe-off --include-path /config --include-path /etc/wireguard --include-path /script --include-path /bin --tag ghcr.io/antyung88/wireguard.slim"
+      - run: script -q -c "./dist_linux/docker-slim build --target wireguard --http-probe-off --include-path /config --include-path /etc/wireguard --include-path /script --include-path /sbin --tag ghcr.io/antyung88/wireguard.slim"
       
       - name: Push
         run: |
