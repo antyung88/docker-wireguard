@@ -33,13 +33,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          
-      - run: docker build . -t wireguard
-      - run: curl -L -O https://downloads.dockerslim.com/releases/1.37.3/dist_linux.tar.gz
-      - run: tar -zxvf dist_linux.tar.gz
-      - run: script -q -c "./dist_linux/docker-slim --debug version"
-      - run: script -q -c "./dist_linux/docker-slim build --target wireguard --http-probe-off --include-path /config --include-path /etc/wireguard --include-path /script --include-path /sbin --include-path /lib --tag ghcr.io/antyung88/wireguard.slim"
-      
-      - name: Push
-        run: |
-          docker push ghcr.io/antyung88/wireguard.slim
