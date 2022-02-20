@@ -1,5 +1,5 @@
-FROM ubuntu
-RUN apt install wireguard-tools -y
+FROM alpine
+RUN apk add --no-cache wireguard-tools bash
 # Add main work dir to PATH
 WORKDIR /scripts
 ENV PATH="/scripts:${PATH}"
