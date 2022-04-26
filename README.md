@@ -1,5 +1,6 @@
 # docker-wireguard
 
+Wireguard in Docker
 
 ```
 vi docker-compose.yml
